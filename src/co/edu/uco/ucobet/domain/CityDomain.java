@@ -4,20 +4,25 @@ import java.util.UUID;
 
 import co.edu.uco.crosscuting.helpers.ObjectHelper;
 import co.edu.uco.crosscuting.helpers.TextHelper;
+import co.edu.uco.crosscuting.helpers.UUIDHelper;
 
 public class CityDomain extends Domain{
 	
 	private String name;
-	private CountryDomain country;
+	private StateDomain state;
 	
-	private CityDomain(final UUID id, final String name,final CountryDomain country ) {
+	private CityDomain(final UUID id, final String name,final StateDomain state ) {
 		super(id);
 		setName(name);
-		setCountry(country);
+		setState(state);
 	}
 	
-	public static final CityDomain create (final UUID id , final String name,final CountryDomain country) {
-		return new CityDomain(id, name,country);
+	public static final CityDomain create (final UUID id , final String name,final StateDomain state) {
+		return new CityDomain(id, name,state);
+	}
+	
+	static final CityDomain create () {
+		return new CityDomain(UUIDHelper.getDefault(),TextHelper.EMPTY, StateDomain.create());
 	}
 	
 	public String getName() {
@@ -33,13 +38,15 @@ public class CityDomain extends Domain{
 		return super.getId();
 	}
 
-	private CountryDomain getCountry() {
-		return country;
+	private StateDomain getState() {
+		return state;
 	}
 
-	private void setCountry(final CountryDomain country) {
-		this.country = ObjectHelper.getDefault(country, CountryDomain.create());
+	private void setState(StateDomain state) {
+		this.state = ObjectHelper.getDefault(state, StateDomain.create());
 	}
+
+
 	
 
 }

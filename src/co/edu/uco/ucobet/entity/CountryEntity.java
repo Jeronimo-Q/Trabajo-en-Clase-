@@ -32,18 +32,5 @@ public class CountryEntity extends DomainEntity{
 		return super.getId();
 	}
 	
-	
-	public static void main(String[] args) {
-		CountryEntity country  = new CountryEntity();
-		country.setName(null);
-		
-		System.out.println(country.getId());
-		System.out.println(country.getName());
-	}
-	
-	
-	
-	
-	
 
 }

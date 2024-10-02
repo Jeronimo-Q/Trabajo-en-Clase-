@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import co.edu.uco.crosscuting.helpers.ObjectHelper;
 import co.edu.uco.crosscuting.helpers.TextHelper;
+import co.edu.uco.crosscuting.helpers.UUIDHelper;
 
 public class StateDomain extends Domain{
 	
@@ -18,6 +19,10 @@ public class StateDomain extends Domain{
 	
 	public static final StateDomain create (final UUID id , final String name,final CountryDomain country) {
 		return new StateDomain(id, name,country);
+	}
+	
+	static final StateDomain create () {
+		return new StateDomain(UUIDHelper.getDefault(),TextHelper.EMPTY, CountryDomain.create());
 	}
 	
 	public String getName() {

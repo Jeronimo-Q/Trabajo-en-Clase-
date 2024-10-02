@@ -5,7 +5,7 @@ public class TextHelper {
 	public static final String EMPTY = "";
 	
 	private TextHelper() {
-		super();
+		
 	}
 	
 	public static boolean isNull(final String string) {
@@ -30,13 +30,6 @@ public class TextHelper {
 	
 	public static String applyTrim(final String string) {
 		return getDefault(string).trim();
-	}
-	
-	public static void main(String[] args) {
-		String b = null;
-		
-		
-		System.out.println(b.trim());
 	}
 
 }

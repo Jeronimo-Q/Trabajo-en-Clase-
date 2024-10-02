@@ -34,23 +34,6 @@ public class CountryDTO extends DomainDTO{
 	public  String getId() {
 		return super.getId();
 	}
-	
 
-	public static void main(String[] args) {
-		CountryEntity country  = new CountryEntity();
-		country.setName(null);
-		
-		System.out.println(country.getId());
-		System.out.println(country.getName());
-		
-		
-		CountryDTO country2 = CountryDTO.create().setName("Colombia");
-		
-		System.out.println(country2.getName());
-	}
-	
-	
-	
-	
 
 }

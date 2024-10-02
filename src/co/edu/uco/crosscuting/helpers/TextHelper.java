@@ -5,7 +5,7 @@ public class TextHelper {
 	public static final String EMPTY = "";
 	
 	private TextHelper() {
-		
+		super();
 	}
 	
 	public static boolean isNull(final String string) {
